@@ -67,7 +67,14 @@ The app will be available at `http://localhost`. See [`.env.example`](./.env.exa
 
 ## Workflows (beta)
 
-CollabReef ships a Gitea-Actions-style automation system. Workflows are defined per workspace (Workflows page in the sidebar) with GitHub-Actions-compatible YAML and executed by a separate runner service that runs each job in a Docker container via [act](https://github.com/nektos/act).
+CollabReef ships a built-in, GitHub-Actions-style workflow engine. Workflows are defined per workspace (Workflows page in the sidebar) with GitHub-Actions-compatible YAML and executed by a separate runner service that runs each job in a Docker container via [act](https://github.com/nektos/act) — since a job can run any CLI or call any HTTP API, you can freely compose automations for scenarios like:
+
+- **AI-powered digests** — call an LLM API on a schedule to summarize an RSS feed, GitHub issues, or a pile of notes into one readable note
+- **Data aggregation** — poll public or internal APIs periodically and roll the results into a running log or daily digest note
+- **Notifications** — watch note changes or external events and forward them to Slack, Discord, email, etc.
+- **Cross-app sync** — mirror notes to/from calendars, issue trackers, or other tools your team uses
+
+See [Workflow examples](#workflow-examples) below for ready-to-use starting points.
 
 Supported triggers:
 
@@ -96,6 +103,8 @@ jobs:
 ```
 
 Jobs see the event payload at `$GITHUB_EVENT_PATH` plus `CB_EVENT_NAME`, `CB_WORKSPACE_ID`, `CB_NOTE_ID`, `CB_RUN_ID` and `CB_RUN_NUMBER`.
+
+### Workflow examples
 
 See [`runner/workflow_examples`](./runner/workflow_examples) for ready-to-use examples:
 

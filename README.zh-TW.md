@@ -67,7 +67,14 @@ docker compose up -d
 
 ## 工作流(Beta)
 
-CollabReef 內建類似 Gitea Actions 的自動化系統。工作流以 workspace 為範圍(側邊欄的「工作流」頁面),使用與 GitHub Actions 相容的 YAML 定義,由獨立的 runner 服務透過 [act](https://github.com/nektos/act) 在 Docker 容器中執行每個 job。
+CollabReef 內建類似 GitHub Actions 的工作流引擎。工作流以 workspace 為範圍(側邊欄的「工作流」頁面),使用與 GitHub Actions 相容的 YAML 定義,由獨立的 runner 服務透過 [act](https://github.com/nektos/act) 在 Docker 容器中執行每個 job — 由於 job 可以執行任何 CLI 指令或呼叫任何 HTTP API,你可以自由編排出各種自動化場景,例如:
+
+- **AI 彙整摘要** — 定期呼叫 LLM API,把 RSS feed、GitHub issues 或大量筆記彙整成一則好讀的摘要筆記
+- **資料彙整** — 定期輪詢公開或內部 API,把結果滾動寫入日誌或每日摘要筆記
+- **通知提醒** — 監控筆記變更或外部事件,轉發到 Slack、Discord、email 等
+- **跨系統同步** — 把筆記與行事曆、issue tracker 或團隊使用的其他工具互相同步
+
+下方 [工作流範例](#工作流範例) 提供可直接使用的起點。
 
 支援的觸發方式:
 
@@ -96,6 +103,8 @@ jobs:
 ```
 
 Job 可透過 `$GITHUB_EVENT_PATH` 讀取事件內容,並有 `CB_EVENT_NAME`、`CB_WORKSPACE_ID`、`CB_NOTE_ID`、`CB_RUN_ID`、`CB_RUN_NUMBER` 等環境變數。
+
+### 工作流範例
 
 更多可直接使用的範例請參閱 [`runner/workflow_examples`](./runner/workflow_examples):
 
