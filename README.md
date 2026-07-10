@@ -97,6 +97,14 @@ jobs:
 
 Jobs see the event payload at `$GITHUB_EVENT_PATH` plus `CB_EVENT_NAME`, `CB_WORKSPACE_ID`, `CB_NOTE_ID`, `CB_RUN_ID` and `CB_RUN_NUMBER`.
 
+See [`runner/workflow_examples`](./runner/workflow_examples) for ready-to-use examples:
+
+- [`scheduled-note.yml`](./runner/workflow_examples/scheduled-note.yml) — minimal template that creates a note on a schedule
+- [`manual-note-from-input.yml`](./runner/workflow_examples/manual-note-from-input.yml) — `workflow_dispatch` inputs to a note
+- [`rss-to-notes.yml`](./runner/workflow_examples/rss-to-notes.yml) — subscribes to an RSS feed and creates a note per new item
+- [`hacker-news-digest.yml`](./runner/workflow_examples/hacker-news-digest.yml) — rolls up top Hacker News stories into a daily digest note
+- [`github-releases-watch.yml`](./runner/workflow_examples/github-releases-watch.yml) — notifies when a repo publishes a new release
+
 ### Running a runner
 
 The runner is opt-in and lives in its own compose project (`docker-compose.runner.yml`) so it can be started independently of the core stack, even on a different host:

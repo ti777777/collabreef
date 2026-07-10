@@ -97,6 +97,14 @@ jobs:
 
 Job 可透過 `$GITHUB_EVENT_PATH` 讀取事件內容,並有 `CB_EVENT_NAME`、`CB_WORKSPACE_ID`、`CB_NOTE_ID`、`CB_RUN_ID`、`CB_RUN_NUMBER` 等環境變數。
 
+更多可直接使用的範例請參閱 [`runner/workflow_examples`](./runner/workflow_examples):
+
+- [`scheduled-note.yml`](./runner/workflow_examples/scheduled-note.yml) — 最小範本,定期在同一個 workspace 建立一則新筆記
+- [`manual-note-from-input.yml`](./runner/workflow_examples/manual-note-from-input.yml) — 以 `workflow_dispatch` 輸入內容建立筆記
+- [`rss-to-notes.yml`](./runner/workflow_examples/rss-to-notes.yml) — 訂閱 RSS feed,每篇新文章建立一則筆記
+- [`hacker-news-digest.yml`](./runner/workflow_examples/hacker-news-digest.yml) — 每天彙整 Hacker News 熱門文章成單一摘要筆記
+- [`github-releases-watch.yml`](./runner/workflow_examples/github-releases-watch.yml) — 監控 repo 最新 GitHub release 並發出通知筆記
+
 ### 啟用 Runner
 
 Runner 為選用服務,自成一個獨立的 compose 專案(`docker-compose.runner.yml`),可以不依附核心服務單獨啟動,甚至跑在不同主機上:
