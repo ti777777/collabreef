@@ -6,7 +6,6 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/collabreef/collabreef/internal/rssfetcher"
 	"github.com/collabreef/collabreef/internal/urlfetcher"
 )
 
@@ -42,26 +41,4 @@ func (h Handler) FetchFile(c echo.Context) error {
 	_, copyErr := io.Copy(c.Response().Writer, bytes.NewReader(data))
 
 	return copyErr
-}
-
-type FetchRSSRequest struct {
-	Url string `json:"url"`
-}
-
-func (h Handler) FetchRSS(c echo.Context) error {
-	feedURL := c.QueryParam("url")
-	if feedURL == "" {
-		return c.JSON(http.StatusBadRequest, map[string]interface{}{
-			"error": "Feed URL is required",
-		})
-	}
-
-	feed, err := rssfetcher.FetchAndParseFeed(c.Request().Context(), feedURL)
-	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]interface{}{
-			"error": "Failed to fetch RSS feed: " + err.Error(),
-		})
-	}
-
-	return c.JSON(http.StatusOK, feed)
 }

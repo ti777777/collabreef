@@ -13,5 +13,4 @@ func RegisterTool(api *echo.Group, h handler.Handler, authMiddleware middlewares
 	g.Use(authMiddleware.ParseJWT())
 
 	g.POST("/fetchfile", h.FetchFile)
-	g.GET("/fetch-rss", h.FetchRSS)
 }
