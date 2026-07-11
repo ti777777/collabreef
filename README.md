@@ -19,7 +19,7 @@ Write anything, anywhere — memos, journals, work notes, checklists, or a blog.
 ```yaml
 services:
   api:
-    image: ti777777/notomate-api
+    image: notomate/notomate-api
     container_name: notomate-api
     volumes:
       - notomate_data:/usr/local/app/bin
@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
 
   collab:
-    image: ti777777/notomate-collab
+    image: notomate/notomate-collab
     container_name: notomate-collab
     environment:
       GRPC_ADDR: notomate-api:50051
@@ -39,7 +39,7 @@ services:
     restart: unless-stopped
 
   nginx:
-    image: ti777777/notomate-nginx
+    image: notomate/notomate-nginx
     container_name: notomate-nginx
     ports:
       - "80:80"
@@ -120,7 +120,7 @@ docker compose -f docker-compose.runner.yml up -d
 
 ```yaml
   notomate-runner:
-    image: ti777777/notomate-runner
+    image: notomate/notomate-runner
     container_name: notomate-runner
     environment:
       NM_INSTANCE_ADDR: host.docker.internal:50051 # or remote-host:50051
