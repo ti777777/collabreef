@@ -49,7 +49,9 @@ export default {
       dispatched: "Workflow run queued",
       validationFailed: "Workflow definition is invalid",
       jobs: "Jobs",
-      noInputs: "This workflow has no inputs."
+      noInputs: "This workflow has no inputs.",
+      settingsTitle: "الإعدادات",
+      settingsNoAccess: "يمكن فقط لمالكي مساحة العمل والمشرفين عرض إعدادات سير العمل."
     },
     signin: {
       "noAccount": "ليس لديك حساب؟"
@@ -79,6 +81,15 @@ export default {
       keyPlaceholder: "المفتاح",
       valuePlaceholder: "القيمة",
       invalidKeyFormat: "يجب أن يبدأ المفتاح بحرف أو شرطة سفلية، وأن يحتوي فقط على أحرف وأرقام وشرطات سفلية.",
+      workflowFiles: "الملفات",
+      workflowFilesHint: "ملفات مشتركة بين جميع سير العمل في مساحة العمل هذه. يتم وضعها في دليل عمل المهمة قبل تشغيلها، بحيث يمكن للخطوات الرجوع إليها كأنها مستودع تم استنساخه (مثال: run: node index.js).",
+      addFile: "رفع ملف",
+      noFiles: "لا توجد ملفات مرفوعة بعد.",
+      chooseFile: "اختر ملفًا",
+      filePathPlaceholder: "المسار (مثال: src/index.js)",
+      fileUploaded: "تم رفع الملف",
+      fileDeleted: "تم حذف الملف",
+      deleteFileConfirm: "هل تريد حذف هذا الملف؟",
       workspaceSettings: "إعدادات مساحة العمل",
       workspaceName: "اسم مساحة العمل",
       deleteThisWorkspace: "حذف مساحة العمل هذه",

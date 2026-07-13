@@ -9,8 +9,6 @@ import { Loader, RotateCcw, Trash2, UserPlus, X } from "lucide-react"
 import OneColumn from "@/components/onecolumn/OneColumn"
 import { useCurrentUserStore } from "@/stores/current-user"
 import { toast } from "@/stores/toast"
-import WorkflowVarsSecretsSection from "./WorkflowVarsSecretsSection"
-import ConnectedRunnersSection from "./ConnectedRunnersSection"
 
 const Settings = () => {
     const currentWorkspaceId = useCurrentWorkspaceId()
@@ -49,9 +47,6 @@ const Settings = () => {
     const currentMember = members.find(m => m.user_id === currentUser?.id)
     const isOwner = currentMember?.role === 'owner'
     const isOwnerOrAdmin = currentMember?.role === 'owner' || currentMember?.role === 'admin'
-    // Runners are instance-wide, so visibility follows the current user's
-    // instance role rather than their role within this workspace.
-    const isInstanceOwnerOrAdmin = currentUser?.role === 'owner' || currentUser?.role === 'admin'
 
     const renameWorkspaceNameMutation = useMutation({
         mutationFn: () => updateWorkspace(currentWorkspaceId, {
@@ -294,16 +289,6 @@ const Settings = () => {
                                             })}
                                         </div>
                                     </div>
-
-                                    {/* Workspace-scoped workflow variables & secrets */}
-                                    {isOwnerOrAdmin && (
-                                        <WorkflowVarsSecretsSection />
-                                    )}
-
-                                    {/* Instance-wide runners, shown read-only for workflow authoring */}
-                                    {isInstanceOwnerOrAdmin && (
-                                        <ConnectedRunnersSection />
-                                    )}
 
                                     {isOwner && (
                                         <div className="flex gap-2 items-center justify-between">

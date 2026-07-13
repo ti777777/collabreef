@@ -49,7 +49,9 @@ export default {
       dispatched: "已加入运行队列",
       validationFailed: "工作流定义无效",
       jobs: "作业",
-      noInputs: "这个工作流没有输入参数。"
+      noInputs: "这个工作流没有输入参数。",
+      settingsTitle: "设置",
+      settingsNoAccess: "只有工作区所有者和管理员可以查看工作流设置。"
     },
     signin: {
       "noAccount": "没有账户？"
@@ -83,6 +85,15 @@ export default {
       keyPlaceholder: "KEY",
       valuePlaceholder: "值",
       invalidKeyFormat: "Key 必须以英文字母或下划线开头，且只能包含英文字母、数字与下划线。",
+      workflowFiles: "文件",
+      workflowFilesHint: "此工作区中所有工作流共享的文件。它们会在作业运行前放入作业的工作目录，因此步骤可以像引用已检出的代码仓库一样引用它们(例如 run: node index.js)。",
+      addFile: "上传文件",
+      noFiles: "尚未上传任何文件。",
+      chooseFile: "选择文件",
+      filePathPlaceholder: "路径(例如 src/index.js)",
+      fileUploaded: "文件已上传",
+      fileDeleted: "文件已删除",
+      deleteFileConfirm: "确定删除这个文件?",
       workspaceSettings: "工作区设置",
       workspaceName: "工作区名称",
       deleteThisWorkspace: "删除此工作区",

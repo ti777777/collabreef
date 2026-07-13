@@ -49,7 +49,9 @@ export default {
       dispatched: "Workflow run queued",
       validationFailed: "Workflow definition is invalid",
       jobs: "Jobs",
-      noInputs: "This workflow has no inputs."
+      noInputs: "This workflow has no inputs.",
+      settingsTitle: "Настройки",
+      settingsNoAccess: "Настройки workflow может просматривать только владелец или администратор рабочего пространства."
     },
     signin: {
       "noAccount": "Нет учётной записи?"
@@ -79,6 +81,15 @@ export default {
       keyPlaceholder: "КЛЮЧ",
       valuePlaceholder: "Значение",
       invalidKeyFormat: "Ключ должен начинаться с буквы или подчёркивания и содержать только буквы, цифры и подчёркивания.",
+      workflowFiles: "Файлы",
+      workflowFilesHint: "Файлы, общие для всех workflow в этом рабочем пространстве. Они помещаются в рабочий каталог задания перед его запуском, поэтому шаги могут обращаться к ним как к склонированному репозиторию (например, run: node index.js).",
+      addFile: "Загрузить файл",
+      noFiles: "Файлы ещё не загружены.",
+      chooseFile: "Выбрать файл",
+      filePathPlaceholder: "Путь (например, src/index.js)",
+      fileUploaded: "Файл загружен",
+      fileDeleted: "Файл удалён",
+      deleteFileConfirm: "Удалить этот файл?",
       workspaceSettings: "Параметры рабочего пространства",
       workspaceName: "Имя рабочего пространства",
       deleteThisWorkspace: "Удалить это рабочее пространство",

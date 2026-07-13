@@ -49,7 +49,9 @@ export default {
       dispatched: "Workflow run queued",
       validationFailed: "Workflow definition is invalid",
       jobs: "Jobs",
-      noInputs: "This workflow has no inputs."
+      noInputs: "This workflow has no inputs.",
+      settingsTitle: "設定",
+      settingsNoAccess: "ワークフロー設定はワークスペースのオーナーと管理者のみ閲覧できます。"
     },
     signin: {
       "noAccount": "アカウントをお持ちでないですか？"
@@ -79,6 +81,15 @@ export default {
       keyPlaceholder: "キー",
       valuePlaceholder: "値",
       invalidKeyFormat: "キーは英字またはアンダースコアで始まり、英字・数字・アンダースコアのみを使用できます。",
+      workflowFiles: "ファイル",
+      workflowFilesHint: "このワークスペース内のすべてのワークフローで共有されるファイルです。ジョブの実行前に作業ディレクトリに配置されるため、ステップからチェックアウト済みのリポジトリのように参照できます(例: run: node index.js)。",
+      addFile: "ファイルをアップロード",
+      noFiles: "まだファイルがアップロードされていません。",
+      chooseFile: "ファイルを選択",
+      filePathPlaceholder: "パス(例: src/index.js)",
+      fileUploaded: "ファイルをアップロードしました",
+      fileDeleted: "ファイルを削除しました",
+      deleteFileConfirm: "このファイルを削除しますか?",
       workspaceSettings: "ワークスペース設定",
       workspaceName: "ワークスペース名",
       deleteThisWorkspace: "このワークスペースを削除",

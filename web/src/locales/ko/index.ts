@@ -49,7 +49,9 @@ export default {
       dispatched: "Workflow run queued",
       validationFailed: "Workflow definition is invalid",
       jobs: "Jobs",
-      noInputs: "This workflow has no inputs."
+      noInputs: "This workflow has no inputs.",
+      settingsTitle: "설정",
+      settingsNoAccess: "워크플로 설정은 워크스페이스 소유자와 관리자만 볼 수 있습니다."
     },
     signin: {
       "noAccount": "계정이 없으신가요?"
@@ -79,6 +81,15 @@ export default {
       keyPlaceholder: "키",
       valuePlaceholder: "값",
       invalidKeyFormat: "키는 문자 또는 밑줄로 시작해야 하며 문자, 숫자, 밑줄만 포함할 수 있습니다.",
+      workflowFiles: "파일",
+      workflowFilesHint: "이 워크스페이스의 모든 워크플로가 공유하는 파일입니다. 작업이 실행되기 전에 작업 디렉터리에 배치되므로, 단계에서 체크아웃된 저장소처럼 참조할 수 있습니다(예: run: node index.js).",
+      addFile: "파일 업로드",
+      noFiles: "아직 업로드된 파일이 없습니다.",
+      chooseFile: "파일 선택",
+      filePathPlaceholder: "경로(예: src/index.js)",
+      fileUploaded: "파일이 업로드되었습니다",
+      fileDeleted: "파일이 삭제되었습니다",
+      deleteFileConfirm: "이 파일을 삭제하시겠습니까?",
       workspaceSettings: "워크스페이스 설정",
       workspaceName: "워크스페이스 이름",
       deleteThisWorkspace: "이 워크스페이스 삭제",

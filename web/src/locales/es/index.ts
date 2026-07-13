@@ -49,7 +49,9 @@ export default {
       dispatched: "Workflow run queued",
       validationFailed: "Workflow definition is invalid",
       jobs: "Jobs",
-      noInputs: "This workflow has no inputs."
+      noInputs: "This workflow has no inputs.",
+      settingsTitle: "Configuración",
+      settingsNoAccess: "Solo los propietarios y administradores del espacio de trabajo pueden ver la configuración de los workflows."
     },
     signin: {
       "noAccount": "¿No tienes cuenta?"
@@ -79,6 +81,15 @@ export default {
       keyPlaceholder: "CLAVE",
       valuePlaceholder: "Valor",
       invalidKeyFormat: "La clave debe empezar con una letra o guion bajo y contener solo letras, números y guiones bajos.",
+      workflowFiles: "Archivos",
+      workflowFilesHint: "Archivos compartidos por todos los workflows de este espacio de trabajo. Se colocan en el directorio de trabajo de un job antes de ejecutarse, para que los pasos puedan referenciarlos como un repositorio clonado (p. ej., run: node index.js).",
+      addFile: "Subir archivo",
+      noFiles: "Aún no se han subido archivos.",
+      chooseFile: "Elegir archivo",
+      filePathPlaceholder: "Ruta (p. ej., src/index.js)",
+      fileUploaded: "Archivo subido",
+      fileDeleted: "Archivo eliminado",
+      deleteFileConfirm: "¿Eliminar este archivo?",
       workspaceSettings: "Configuración del Espacio de Trabajo",
       workspaceName: "Nombre del espacio de trabajo",
       deleteThisWorkspace: "Eliminar este espacio de trabajo",

@@ -49,7 +49,9 @@ export default {
       dispatched: "已排入執行佇列",
       validationFailed: "工作流定義無效",
       jobs: "作業",
-      noInputs: "這個工作流沒有輸入參數。"
+      noInputs: "這個工作流沒有輸入參數。",
+      settingsTitle: "設定",
+      settingsNoAccess: "只有工作區擁有者和管理員可以查看工作流設定。"
     },
     signin: {
       "noAccount": "沒有帳號?"
@@ -83,6 +85,15 @@ export default {
       keyPlaceholder: "KEY",
       valuePlaceholder: "值",
       invalidKeyFormat: "Key 必須以英文字母或底線開頭，且只能包含英文字母、數字與底線。",
+      workflowFiles: "檔案",
+      workflowFilesHint: "此工作區中所有 workflow 共用的檔案。這些檔案會在作業執行前放入該作業的工作目錄，讓步驟可以像參照已簽出的程式碼庫一樣使用它們(例如 run: node index.js)。",
+      addFile: "上傳檔案",
+      noFiles: "尚未上傳任何檔案。",
+      chooseFile: "選擇檔案",
+      filePathPlaceholder: "路徑(例如 src/index.js)",
+      fileUploaded: "檔案上傳成功",
+      fileDeleted: "檔案已刪除",
+      deleteFileConfirm: "確定刪除這個檔案?",
       workspaceSettings: "工作區設定",
       workspaceName: "工作區名稱",
       deleteThisWorkspace: "刪除這個工作區",
