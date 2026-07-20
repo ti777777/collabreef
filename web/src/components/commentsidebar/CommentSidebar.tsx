@@ -377,7 +377,7 @@ const CommentSidebar: FC<CommentSidebarProps> = ({ workspaceId, noteId, open, on
               {anchor.quoted_text && (
                 <blockquote className={`text-xs italic border-l-2 pl-2 mb-3 line-clamp-3 ${isOrphaned ? "text-gray-400 border-gray-300 dark:text-gray-500 dark:border-neutral-600" : "text-gray-500 dark:text-gray-400 border-primary/40"}`}>
                   {anchor.quoted_text}
-                  {isOrphaned && <span className="block not-italic mt-1 text-[11px] text-gray-400">{t("comments.orphaned")}</span>}
+                  {isOrphaned && <span className="block not-italic mt-1 text-xs text-gray-400">{t("comments.orphaned")}</span>}
                 </blockquote>
               )}
 
@@ -387,9 +387,9 @@ const CommentSidebar: FC<CommentSidebarProps> = ({ workspaceId, noteId, open, on
                     <Avatar name={comment.created_by_name} avatarUrl={comment.created_by_avatar_url} size={24} />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs font-medium text-gray-700 dark:text-gray-200 truncate">{comment.created_by_name}</span>
-                        <span className="text-[11px] text-gray-400">{formatRelativeTime(t, comment.created_at)}</span>
-                        {comment.edited && <span className="text-[11px] text-gray-400">{t("comments.edited")}</span>}
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200 truncate">{comment.created_by_name}</span>
+                        <span className="text-xs text-gray-400">{formatRelativeTime(t, comment.created_at)}</span>
+                        {comment.edited && <span className="text-xs text-gray-400">{t("comments.edited")}</span>}
                         {user?.id === comment.created_by && editingId !== comment.id && (
                           <DropdownMenu.Root>
                             <DropdownMenu.Trigger asChild>

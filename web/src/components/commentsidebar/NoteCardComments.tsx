@@ -152,9 +152,9 @@ const NoteCardComments: FC<NoteCardCommentsProps> = ({ workspaceId, noteId }) =>
                           <Avatar name={comment.created_by_name} avatarUrl={comment.created_by_avatar_url} size={22} />
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-1.5">
-                              <span className="text-xs font-medium text-gray-700 dark:text-gray-200 truncate">{comment.created_by_name}</span>
-                              <span className="text-[11px] text-gray-400"><NoteTime time={comment.created_at} /></span>
-                              {comment.edited && <span className="text-[11px] text-gray-400">{t("comments.edited")}</span>}
+                              <span className="text-sm font-medium text-gray-700 dark:text-gray-200 truncate">{comment.created_by_name}</span>
+                              <span className="text-xs text-gray-400"><NoteTime time={comment.created_at} /></span>
+                              {comment.edited && <span className="text-xs text-gray-400">{t("comments.edited")}</span>}
                               {user?.id === comment.created_by && editingId !== comment.id && (
                                 <DropdownMenu.Root>
                                   <DropdownMenu.Trigger asChild>
