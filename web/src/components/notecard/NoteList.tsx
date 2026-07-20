@@ -7,9 +7,10 @@ interface NoteListProps {
     getLinkTo?: (note: NoteData) => string
     showLink?: boolean
     maxNodes?: number
+    workspaceId?: string
 }
 
-const NoteList: FC<NoteListProps> = ({ notes, getLinkTo, maxNodes, showLink = true }) => {
+const NoteList: FC<NoteListProps> = ({ notes, getLinkTo, maxNodes, showLink = true, workspaceId }) => {
     return (
         <div className="px-4 flex flex-col gap-2">
             {notes?.map((note: NoteData, idx: number) => {
@@ -21,6 +22,7 @@ const NoteList: FC<NoteListProps> = ({ notes, getLinkTo, maxNodes, showLink = tr
                         linkTo={getLinkTo ? getLinkTo(note) : undefined}
                         showLink={showLink}
                         maxNodes={maxNodes}
+                        workspaceId={workspaceId}
                     />
                 )
             })}
